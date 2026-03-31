@@ -1,0 +1,16 @@
+load citiesItaly2024.mat
+x=citiesItaly2024.SalaryA;
+n=numel(x);
+subplot(1,2,1); 
+histogram(x);
+title('Istogramma dei Salari');
+subplot(1,2,2);
+qqplot(x); 
+title('Q-Q Plot dei Salari');
+[h,p]=adtest(x);        
+text(0.05, 0.95, 'Anderson-Darling: h=1, p=0.01861','Units','normalized', ...
+    'VerticalAlignment','top', ...
+    'FontSize',10, ...
+    'BackgroundColor','white', ...
+    'EdgeColor','k', ...
+    'Margin',4);
